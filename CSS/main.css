@@ -962,7 +962,7 @@ body {
 
 #aboutTitle {
     position: absolute;
-    top: 50%;
+    top: 7%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -998,6 +998,10 @@ body {
     -ms-user-select: none;
     user-select: none;
 
+}
+
+@supports (-moz-appearance:none) {
+    #aboutTitle { opacity: .4; } 
 }
 
 
