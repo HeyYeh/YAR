@@ -1299,6 +1299,77 @@ body {
         margin-top: 10px;
     }
     
+    #midBox5 {
+        min-height: 70px;
+    max-height: 70px;
+    }
+    
+}
+
+@media (max-height: 695px) {
+    
+    #midBox3 {
+        min-height: 35px;
+    max-height: 35px;
+}
+    
+    .number {
+        font-size: 40px;
+    }
+    
+    .littleNumber {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    
+    .bottomBigNumb {
+        font-size: 35px;
+    }
+    
+    .bottomSmallNumb {
+        font-size: 20px;
+        margin-top: 40px;
+        margin-left: -20px;
+    }
+    
+    #midBox4ish {
+        min-height: 20px;
+    }
+    
+    #midBox5 {
+        min-height: 50px;
+    max-height: 70px;
+    }
+    
+     #watchFilmCont {
+        width: 300px;
+        height: 45px;
+        margin-top: 25px;
+    }
+
+    #watchFilm {
+        font-size: 35px;
+
+    }
+    
+}
+
+@media (max-height: 688px) {
+    .iconImage {
+        max-height: 90px;
+    }
+
+    .thingText {
+        font-size: 18px;
+        z-index: 8;
+    }
+}
+
+@media (max-height: 640px) {
+       #midBox3 {
+        min-height: 15px;
+    max-height: 35px;
+}
 }
 
 #mobileGoAwayCont {
