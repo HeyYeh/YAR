@@ -1397,6 +1397,7 @@ body {
         background-color: var(--bg-color);
         z-index: 30;
         text-align: center;
+        overflow-y: scroll;
     }
     
     #mobileMidCont {
