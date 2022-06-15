@@ -958,6 +958,7 @@ body {
     text-align: center;
     border: 10px groove #D10337;
     overflow: hidden;
+    filter: brightness(90%);
 }
 
 #aboutTitle {
@@ -997,6 +998,9 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    
+        
+    
 
 }
 
@@ -1027,6 +1031,7 @@ body {
     font-size: 1.5rem;
     width: 80%;
     z-index: 23;
+
 }
 
 #picturesCont {
