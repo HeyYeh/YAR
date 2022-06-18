@@ -89,7 +89,8 @@ $(document).ready(function () {
     //    
     //     
     var sound = true;
-    $("#backTrack").get(0).play();
+    $("#backTrack").data("muted", false);
+    $("#backTrack").get([0]).play();
 
     $(".soundButton").click(function () {
 
@@ -410,3 +411,4 @@ $(document).ready(function () {
 
 
 });
+7
