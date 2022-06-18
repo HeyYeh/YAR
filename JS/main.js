@@ -1,42 +1,42 @@
 $(document).ready(function () {
 
 
-//    function init() {
+    function init() {
+
+        if (!createjs.Sound.initializeDefaultPlugins()) {
+            return;
+        }
+
 //
-//        if (!createjs.Sound.initializeDefaultPlugins()) {
-//            return;
-//        }
-//
-////
-////        var audioPath = "../Assets/";
-////        var sounds = [
-////            {
-////                id: "backTrack",
-////                src: "backTrack.ogg"
-////        },
-////];
-//
-//        createjs.Sound.alternateExtensions = ["mp3"];
-//        createjs.Sound.addEventListener("fileload", handleLoad);
-//        createjs.Sound.registerSounds("../Assets/backTrack.ogg", "backTrack");
-//
-//        
-//        console.log("why");
-//    }
-//
-//
-//    function handleLoad(event) {
-//        createjs.Sound.play("../Assets/backTrack.ogg");
-//    }
-//
-//
-//    handleLoad();
+//        var audioPath = "../Assets/";
+//        var sounds = [
+//            {
+//                id: "backTrack",
+//                src: "backTrack.ogg"
+//        },
+//];
+
+        createjs.Sound.alternateExtensions = ["mp3"];
+        createjs.Sound.addEventListener("fileload", handleLoad);
+        createjs.Sound.registerSounds("../Assets/backTrack.ogg", "backTrack");
+
+        
+        console.log("why");
+    }
 
 
-    //    function playSound() {
-    //        var sound = document.getElementById("audio");
-    //        sound.play();
-    //    }
+    function handleLoad(event) {
+        createjs.Sound.play("../Assets/backTrack.ogg");
+    }
+
+
+    handleLoad();
+
+
+        function playSound() {
+            var sound = document.getElementById("audio");
+            sound.play();
+        }
 
 
     $(function () {
@@ -73,24 +73,22 @@ $(document).ready(function () {
 
 
 
-    //    $("body").append(backMusic);
-    //    $("#backTrack").get([0]).play();
-
-    //
-    //    var sound = false;
-    //
-    //    var backMusic = "<audio id=\"backTrack\" src=\"Assets/BackTrack.ogg\" autoplay muted></audio>";
-    //    $("body").append(backMusic);
-    //    
-    //    setTimeout(function () {
-    //        $(".soundButton").trigger('click');
-    //    }, 1000);
-    //
-    //    
-    //     
+//        $("body").append(backMusic);
+//        $("#backTrack").get([0]).play();
+//
+//    
+//        var sound = false;
+//    
+//        var backMusic = "<audio id=\"backTrack\" src=\"Assets/BackTrack.ogg\" autoplay muted></audio>";
+//        $("body").append(backMusic);
+//        
+//        setTimeout(function () {
+//            $(".soundButton").trigger('click');
+//        }, 1000);
+//    
+//        
+//         
     var sound = true;
-    $("#backTrack").data("muted", false);
-    $("#backTrack").get([0]).play();
 
     $(".soundButton").click(function () {
 
