@@ -1,42 +1,42 @@
 $(document).ready(function () {
 
 
-    function init() {
-
-        if (!createjs.Sound.initializeDefaultPlugins()) {
-            return;
-        }
-
-//
-//        var audioPath = "../Assets/";
-//        var sounds = [
-//            {
-//                id: "backTrack",
-//                src: "backTrack.ogg"
-//        },
-//];
-
-        createjs.Sound.alternateExtensions = ["mp3"];
-        createjs.Sound.addEventListener("fileload", handleLoad);
-        createjs.Sound.registerSounds("../Assets/backTrack.ogg", "backTrack");
-
-        
-        console.log("why");
-    }
-
-
-    function handleLoad(event) {
-        createjs.Sound.play("../Assets/backTrack.ogg");
-    }
-
-
-    handleLoad();
-
-
-        function playSound() {
-            var sound = document.getElementById("audio");
-            sound.play();
-        }
+    //    function init() {
+    //
+    //        if (!createjs.Sound.initializeDefaultPlugins()) {
+    //            return;
+    //        }
+    //
+    ////
+    ////        var audioPath = "../Assets/";
+    ////        var sounds = [
+    ////            {
+    ////                id: "backTrack",
+    ////                src: "backTrack.ogg"
+    ////        },
+    ////];
+    //
+    //        createjs.Sound.alternateExtensions = ["mp3"];
+    //        createjs.Sound.addEventListener("fileload", handleLoad);
+    //        createjs.Sound.registerSounds("../Assets/backTrack.ogg", "backTrack");
+    //
+    //        
+    //        console.log("why");
+    //    }
+    //
+    //
+    //    function handleLoad(event) {
+    //        createjs.Sound.play("../Assets/backTrack.ogg");
+    //    }
+    //
+    //
+    //    handleLoad();
+    //
+    //
+    //        function playSound() {
+    //            var sound = document.getElementById("audio");
+    //            sound.play();
+    //        }
 
 
     $(function () {
@@ -73,24 +73,24 @@ $(document).ready(function () {
 
 
 
-//        $("body").append(backMusic);
-//        $("#backTrack").get([0]).play();
-//
-//    
-//        var sound = false;
-//    
-//        var backMusic = "<audio id=\"backTrack\" src=\"Assets/BackTrack.ogg\" autoplay muted></audio>";
-//        $("body").append(backMusic);
-//        
-//        setTimeout(function () {
-//            $(".soundButton").trigger('click');
-//        }, 1000);
-//    
-//        
-//         
-    var sound = true;
+    //        $("body").append(backMusic);
+    //        $("#backTrack").get([0]).play();
+    //
+    //    
+    //        var sound = false;
+    //    
+    //        var backMusic = "<audio id=\"backTrack\" src=\"Assets/BackTrack.ogg\" autoplay muted></audio>";
+    //        $("body").append(backMusic);
+    //        
+    //        setTimeout(function () {
+    //            $(".soundButton").trigger('click');
+    //        }, 1000);
+    //    
+    //        
+    //         
+    var sound = false;
 
-    $(".soundButton").click(function () {
+    function soundSwitch() {
 
         if (sound) {
 
@@ -109,6 +109,26 @@ $(document).ready(function () {
         }
 
         sound = !sound;
+
+    }
+
+    $(".soundButton").click(function () {
+
+        soundSwitch();
+
+    })
+
+    var initialSound = true;
+
+    $("html").click(function () {
+
+        if (initialSound) {
+
+            soundSwitch();
+
+            initialSound = false;
+
+        }
     })
 
 
@@ -163,6 +183,10 @@ $(document).ready(function () {
     //TRAILER
     $("#popupTriggerTrailer").click(function () {
 
+        if (sound) {
+            $("#backTrack").get(0).pause();
+        };
+
         $("#blackoutCurtain").removeClass("displayNone").addClass("displayBlock");
         blackoutBool = true;
 
@@ -188,6 +212,10 @@ $(document).ready(function () {
 
     //FULL FILM
     $("#watchFilmCont").click(function () {
+
+        if (sound) {
+            $("#backTrack").get(0).pause();
+        };
 
         $("#blackoutCurtain").removeClass("displayNone").addClass("displayBlock");
         blackoutBool = true;
@@ -268,6 +296,12 @@ $(document).ready(function () {
     //Logic for the below section: when you clickn on the black background it establishes enumbs for the different popup types, then the for function checks all of those enums to see which popup is currently open. When it finds it, it animates it to invisible and gets rid of it, then does the same for the blackout.
 
     $("#blackoutCurtain").click(function () {
+
+        if (sound == true) {
+
+            $("#backTrack").get(0).play();
+
+        }
 
         var popup = {
             bts: 1,
@@ -408,5 +442,91 @@ $(document).ready(function () {
 
 
 
+
+function pixelate(tileSize = 10, sigmaGauss = 2) {
+  tileSize = tileSize < 1 ? 1 : tileSize;
+  sigmaGauss = sigmaGauss < 1 ? 1 : sigmaGauss;
+
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // only to make the output visible
+  // document.body.appendChild(canvas);
+
+  const rows = canvas.height / tileSize;
+  const cols = canvas.width / tileSize;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      ctx.fillStyle = "white";
+
+      ctx.fillRect(
+        c * tileSize - 1 + Math.floor(tileSize / 2),
+        r * tileSize - 1 + Math.floor(tileSize / 2),
+        1,
+        1
+      );
+    }
+  }
+
+  const pixelate = document.getElementById("pixelate");
+  pixelate.innerHTML = "";
+
+  const blur = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "feGaussianBlur"
+  );
+  blur.setAttribute("in", "SourceGraphic");
+  blur.setAttribute("stdDeviation", sigmaGauss);
+  blur.setAttribute("result", "blurred");
+
+  const hmap = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "feImage"
+  );
+  const hmapUrl = canvas.toDataURL();
+  hmap.setAttribute("href", hmapUrl);
+  hmap.setAttribute("result", "hmap");
+
+  const blend = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "feBlend"
+  );
+  // blend.setAttribute("mode", "lighten");
+  blend.setAttribute("mode", "multiply");
+  blend.setAttribute("in", "blurred");
+  blend.setAttribute("in2", "hmap");
+
+  const morph = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "feMorphology"
+  );
+  morph.setAttribute("operator", "dilate");
+  morph.setAttribute("radius", tileSize / 2);
+
+  pixelate.setAttribute("width", canvas.width);
+  pixelate.setAttribute("height", canvas.height);
+  pixelate.appendChild(blur);
+  pixelate.appendChild(hmap);
+  pixelate.appendChild(blend);
+  pixelate.appendChild(morph);
+    
+    console.log(morph);
+}
+
+pixelate(5, 1);
+setTimeout(function () {
+  pixelate(50, 1);
+}, 3000);
+window.p = pixelate;
+
+    
+
+
+
 });
-7
