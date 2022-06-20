@@ -1,44 +1,6 @@
 $(document).ready(function () {
 
 
-    //    function init() {
-    //
-    //        if (!createjs.Sound.initializeDefaultPlugins()) {
-    //            return;
-    //        }
-    //
-    ////
-    ////        var audioPath = "../Assets/";
-    ////        var sounds = [
-    ////            {
-    ////                id: "backTrack",
-    ////                src: "backTrack.ogg"
-    ////        },
-    ////];
-    //
-    //        createjs.Sound.alternateExtensions = ["mp3"];
-    //        createjs.Sound.addEventListener("fileload", handleLoad);
-    //        createjs.Sound.registerSounds("../Assets/backTrack.ogg", "backTrack");
-    //
-    //        
-    //        console.log("why");
-    //    }
-    //
-    //
-    //    function handleLoad(event) {
-    //        createjs.Sound.play("../Assets/backTrack.ogg");
-    //    }
-    //
-    //
-    //    handleLoad();
-    //
-    //
-    //        function playSound() {
-    //            var sound = document.getElementById("audio");
-    //            sound.play();
-    //        }
-
-
     $(function () {
         var body = $('.sparklesCont'),
             template = $('.shine'),
@@ -73,21 +35,10 @@ $(document).ready(function () {
 
 
 
-    //        $("body").append(backMusic);
-    //        $("#backTrack").get([0]).play();
-    //
-    //    
-    //        var sound = false;
-    //    
-    //        var backMusic = "<audio id=\"backTrack\" src=\"Assets/BackTrack.ogg\" autoplay muted></audio>";
-    //        $("body").append(backMusic);
-    //        
-    //        setTimeout(function () {
-    //            $(".soundButton").trigger('click');
-    //        }, 1000);
-    //    
-    //        
-    //         
+
+
+
+
     var sound = false;
 
     function soundSwitch() {
@@ -112,12 +63,14 @@ $(document).ready(function () {
 
     }
 
+    
     $(".soundButton").click(function () {
 
         soundSwitch();
 
     })
 
+    
     var initialSound = true;
 
     $("html").click(function () {
