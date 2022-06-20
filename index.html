@@ -386,10 +386,23 @@
     <div id="overlayAur1"></div>
     <div id="overlayAur2"></div>
     <div id="overlayAur3"></div>
+    <div id="overlayAur4"></div>
 
     
 
-
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+  <defs>
+    <filter id="pixelate" x="0" y="0">
+      <feFlood x="0" y="0" height=".05" width=".05"/> 
+      <feComposite width="1.1" height="1.1"/>
+      <feTile result="a"/>
+      <feComposite in="SourceGraphic" in2="a" 
+                   operator="in"/>
+      <feMorphology operator="dilate"
+                    radius=".5"/>
+    </filter>
+  </defs>
+</svg> 
     
 
 
