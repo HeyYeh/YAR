@@ -303,6 +303,7 @@ body {
 
 #mainImage {
     height: 65vh;
+    max-height: 600px;
     width: auto;
     -webkit-filter: brightness(95%);
     filter: brightness(95%);
