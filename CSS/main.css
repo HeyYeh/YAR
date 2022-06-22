@@ -1213,7 +1213,7 @@ body {
 }
 
 
-.icons, #mainImage { -webkit-filter: url("#pixelate"); filter: url("#pixelate") }
+.GIFStatic, #mainImage { -webkit-filter: url("#pixelate"); filter: url("#pixelate") }
 
 
 @media (max-width: 1225px) {
