@@ -1502,6 +1502,82 @@ body {
     }
 }
 
+@media (max-height: 585px) {
+ 
+    #mainImage {
+        height: 54vh;
+    }
+
+    #titleCont {
+        height: 0;
+        text-align: center;
+        display: ;
+        left: 0px;
+        width: 80%;
+    }
+
+    .titleText {
+        font-family: bodoniflfbold;
+        z-index: 2;
+        background-color: aliceblu;
+        color: #F2E329;
+        width: 100%;
+        text-shadow: 1px 1px 5px black;
+        height:
+    }
+
+
+
+    #randomText {
+        font-size: 15px;
+        max-width: 600px;
+
+        position: relative;
+        top: 10%;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);
+    }
+
+    #midBox4ish {
+        max-height: 30px;
+    }
+    
+    #watchFilmCont {
+        width: 300px;
+        height: 45px;
+        margin-top: -30px;
+    }
+    
+}
+
+@media (max-height: 500px) {
+    
+    #midBox4ish {
+        max-height: 10px;
+        min-height: 0px;
+        height: 5px;
+    }
+    
+    #midBox7 {
+        height: 0px;
+        min-height: 1px;
+    }
+    
+    
+    #watchFilmCont {
+        width: 230px;
+        height: 35px;
+        margin-top: -25px;
+    }
+
+    #watchFilm {
+        font-size: 25px;
+
+    }
+    
+}
+
 #mobileGoAwayCont {
     display: none;
 }
