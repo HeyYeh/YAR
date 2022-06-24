@@ -39,6 +39,8 @@ $(document).ready(function () {
 
 
 
+    var initialSound = true;
+
     var sound = false;
 
     function soundSwitch() {
@@ -60,18 +62,17 @@ $(document).ready(function () {
         }
 
         sound = !sound;
+        console.log("sound = " + sound);
 
     }
 
-    
+
     $(".soundButton").click(function () {
 
         soundSwitch();
 
     })
 
-    
-    var initialSound = true;
 
     $("html").click(function () {
 
@@ -80,6 +81,7 @@ $(document).ready(function () {
             soundSwitch();
 
             initialSound = false;
+            console.log("init = " + initialSound)
 
         }
     })
@@ -136,9 +138,27 @@ $(document).ready(function () {
     //TRAILER
     $("#popupTriggerTrailer").click(function () {
 
+        if (initialSound) {
+
+            initialSound = false;
+            soundSwitch();
+            sound = true;
+
+            $("#mute").removeClass("displayBlock").addClass("displayNone");
+            $("#sound").removeClass("displayNone").addClass("displayBlock");
+            console.log("trailerinit");
+
+        }
+
         if (sound) {
+            console.log("trailerclick");
             $("#backTrack").get(0).pause();
+
         };
+
+
+
+        console.log("trailer sound = " + sound);
 
         $("#blackoutCurtain").removeClass("displayNone").addClass("displayBlock");
         blackoutBool = true;
@@ -166,8 +186,22 @@ $(document).ready(function () {
     //FULL FILM
     $("#watchFilmCont").click(function () {
 
+        if (initialSound) {
+
+            initialSound = false;
+            soundSwitch();
+            sound = true;
+
+            $("#mute").removeClass("displayBlock").addClass("displayNone");
+            $("#sound").removeClass("displayNone").addClass("displayBlock");
+            console.log("trailerinit");
+
+        }
+
         if (sound) {
+            console.log("trailerclick");
             $("#backTrack").get(0).pause();
+
         };
 
         $("#blackoutCurtain").removeClass("displayNone").addClass("displayBlock");
@@ -249,6 +283,8 @@ $(document).ready(function () {
     //Logic for the below section: when you clickn on the black background it establishes enumbs for the different popup types, then the for function checks all of those enums to see which popup is currently open. When it finds it, it animates it to invisible and gets rid of it, then does the same for the blackout.
 
     $("#blackoutCurtain").click(function () {
+
+        console.log("blackout sound = " + sound);
 
         if (sound == true) {
 
