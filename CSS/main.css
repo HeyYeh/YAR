@@ -1430,8 +1430,41 @@ body {
     }
 
     #midBox5 {
-        min-height: 70px;
-        max-height: 70px;
+        min-height: 60px;
+        max-height: 60px;
+    }
+    
+    .number {
+        font-size: 37px;
+        height: 34px;
+        top: 55%;
+    }
+
+    .littleNumber {
+        top: -82px;
+        left: 77px;
+        font-size: 21px;
+    }
+
+    .bottomSmallNumb {
+        top: -87px;
+    }
+    
+    #midBox7 {
+        height: 0px;
+        min-height: 0px;
+        max-height: 0px;
+    }
+    
+    #randomText {
+        font-size: 16px;
+        width: 80%;
+        max-height: 80px;
+    }
+    
+    #midBox1 {
+        height: 20px;
+        max-height: 20px;
     }
 
 }
@@ -1485,7 +1518,7 @@ body {
 
 }
 
-@media (max-height: 688px) {
+@media (max-height: 695px) {
     .iconImage {
         max-height: 90px;
     }
@@ -1493,6 +1526,18 @@ body {
     .thingText {
         font-size: 18px;
         z-index: 8;
+    }
+    
+    #midBox1 {
+        height: 10px;
+        max-height: 10px;
+        min-height: 10px;
+    }
+    
+    #midBox3 {
+        height: 20px;
+        min-height: 20px;
+        max-height: 30px;
     }
 }
 
@@ -1549,6 +1594,28 @@ body {
         height: 45px;
         margin-top: -30px;
     }
+    
+    #youre {
+        font-size: 50px;
+    }
+
+    #absolutely {
+        font-size: 50px;
+    }
+
+    #right {
+        font-size: 120px;
+        margin-top: -10px;
+        letter-spacing: -3px;
+    }
+
+    #quoteMarks {
+        font-family: bodoniflfbold;
+        font-size: 60px;
+        margin-top: -170px;
+        letter-spacing: -5px;
+    }
+
     
 }
 
