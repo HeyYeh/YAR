@@ -465,7 +465,7 @@ body {
 #watchFilmCont {
     z-index: 4;
     background-color: var(--bg-color);
-/*    400px when it says watch the film. Why no work?*/
+    /*    400px when it says watch the film. Why no work?*/
     width: 319px;
     height: 75px;
     position: absolute;
@@ -1217,14 +1217,20 @@ body {
 }
 
 
-.GIFStatic,
-#mainImage {
-    -webkit-filter: url("#pixelate");
-    filter: url("#pixelate")
-        -webkit-transform: translateZ(0);
--webkit-perspective: 1000;
--webkit-backface-visibility: hidden;
+@supports not (-webkit-touch-callout: none) {
+    /* CSS for other than iOS devices */
+
+    .GIFStatic,
+    #mainImage {
+        -webkit-filter: url("#pixelate");
+        filter: url("#pixelate") -webkit-transform: translateZ(0);
+        -webkit-perspective: 1000;
+        -webkit-backface-visibility: hidden;
+    }
+
 }
+
+
 
 
 @media (max-width: 1225px) {
@@ -1256,8 +1262,8 @@ body {
     }
 
     #watchFilmCont {
-/*        350px when it says watch film*/
-        width:280px;
+        /*        350px when it says watch film*/
+        width: 280px;
         height: 70px;
         margin-top: -15px;
     }
@@ -1390,7 +1396,7 @@ body {
     }
 
     #watchFilmCont {
-/*        300px when it says watch the film!*/
+        /*        300px when it says watch the film!*/
         width: 250px;
         height: 65px;
         margin-top: -25px;
