@@ -466,7 +466,7 @@ body {
     z-index: 4;
     background-color: var(--bg-color);
 /*    400px when it says watch the film. Why no work?*/
-    width: 450px;
+    width: 320px;
     height: 75px;
     position: absolute;
 
@@ -557,6 +557,7 @@ body {
     position: relative;
     height: 100%;
     overflow: none;
+    overflow: visible;
 }
 
 .iconImage {
@@ -1253,7 +1254,7 @@ body {
 
     #watchFilmCont {
 /*        350px when it says watch film*/
-        width: 410px;
+        width:280px;
         height: 70px;
         margin-top: -15px;
     }
@@ -1387,7 +1388,7 @@ body {
 
     #watchFilmCont {
 /*        300px when it says watch the film*/
-        width: 360px;
+        width: 250px;
         height: 65px;
         margin-top: -25px;
     }
