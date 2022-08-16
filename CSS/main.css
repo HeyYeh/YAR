@@ -1221,6 +1221,9 @@ body {
 #mainImage {
     -webkit-filter: url("#pixelate");
     filter: url("#pixelate")
+        -webkit-transform: translateZ(0);
+-webkit-perspective: 1000;
+-webkit-backface-visibility: hidden;
 }
 
 
